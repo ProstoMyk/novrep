@@ -1,0 +1,22 @@
+#include <string.h>
+#include <stdio.h>
+int main()
+{
+int ch[100],nech[100];
+int t,n,vopros,schet1=0,schet2=0,otvet=1,max;
+scanf("%d",&t);
+for (int i=0;i<t;i++){
+scanf("%d",&n);
+for (int j=0;j<n;j++){
+scanf("%d",&vopros);
+// printf("%d\n",vopros%2);
+if (vopros%2==1) { nech[schet1]=vopros; printf("%d\n",nech[schet1]); schet1++; }
+else { ch[schet2]=vopros; printf("%d\n",ch[schet2]); schet2++; }
+}
+
+for (int i=0;i<schet1-1;i++) if ((nech[i]>nech[i+1])&&(1<schet1)) otvet=0;
+for (int i=0;i<schet2-1;i++) if ((ch[i]>ch[i+1])&&(1<schet2)) otvet=0;
+if (otvet==0) printf("no\n");
+else printf("yes\n");}
+return 0;
+}
